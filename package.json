@@ -1,0 +1,10 @@
+{
+  "name": "mini-sis",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node run.js",
+    "seed": "npm --prefix server run seed",
+    "setup": "npm --prefix server install && npm --prefix client install"
+  }
+}
