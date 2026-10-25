@@ -15,6 +15,9 @@ const canTeach = (user, course) => user.role === 'admin' || String(course.instru
 // Audit trail: records who did what. Never blocks the main action.
 const audit = (user, action, detail) => AuditLog.create({ actor: user.id, actorName: user.name, action, detail }).catch(() => {});
 
+// Health check for the hosting platform (no login needed)
+r.get('/health', (req, res) => res.json({ ok: true }));
+
 // Reject malformed ids with a clean 400 instead of a server error
 r.param('id', (req, res, next, id) => (isId(id) ? next() : fail(res, 400, 'Invalid id')));
 
