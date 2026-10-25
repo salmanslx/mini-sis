@@ -89,14 +89,3 @@ The running app uses MongoDB. The SQL files are separate practice.
 | Atomic seat claim (`$inc` with a condition) | Transaction with a seat check |
 | Waitlist promotion (`sort` + `findOneAndUpdate`) | `ORDER BY ... LIMIT 1` inside a transaction |
 | Audit log collection | `audit_log` table |
-
-## How to talk about it in an interview
-> "I built a mini student information system to learn how university systems like Banner work. It has role-based access,
-> course registration with atomic seat limits, prerequisites and a waitlist that promotes automatically, an instructor
-> gradebook with attendance, GPA and transcripts, an approval workflow with an audit log, and an API-key protected
-> integration endpoint that an LMS could use. I also modelled the same data in SQL to practise joins, window functions and transactions."
-
-Say it is a personal project, never as work experience. Be ready to explain: why seat claims are atomic, how the waitlist is
-ordered and promoted, how roles are enforced on the server, how GPA is calculated, and what you would add next
-(email notifications, terms/semesters, PostgreSQL or Oracle backend, automated tests, deployment).
-"# mini-sis" 
